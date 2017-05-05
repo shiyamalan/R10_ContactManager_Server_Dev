@@ -76,7 +76,7 @@ th {
 	<div>
 		<form:form action="${addAction}" commandName="person">
 			<table>
-				<%-- 	<c:if test="${!empty person.name}">
+				<c:if test="${!empty person.name}">
 					<tr>
 						<td><form:label path="id">
 								<spring:message text="ID" />
@@ -103,30 +103,10 @@ th {
 						</c:if> <c:if test="${empty person.name}">
 							<input type="submit" value="<spring:message text="Add Person"/>" />
 						</c:if></td>
-				</tr> --%>
+				</tr>
 
 			</table>
-			<form:label path="name">First Name</form:label>
-			<input type="text" id="fname" name="firstname"
-				placeholder="Person first name..">
 
-			<form:label path="name">Last Name</form:label>
-			<input type="text" id="lname" name="lastname"
-				placeholder="Person last name..">
-
-			<<form:label path="country">Country</form:label>
-			<select id="country" name="country">
-				<option value="australia">Australia</option>
-				<option value="canada">Canada</option>
-				<option value="usa">USA</option>
-			</select>
-
-			<c:if test="${!empty person.name}">
-				<input type="submit" value="<spring:message text="Edit Person"/>" />
-			</c:if>
-			<c:if test="${empty person.name}">
-				<input type="submit" value="<spring:message text="Add Person"/>" />
-			</c:if>
 		</form:form>
 	</div>
 

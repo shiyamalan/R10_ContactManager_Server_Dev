@@ -1,5 +1,7 @@
 package sg.dbsys.server.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -27,23 +29,28 @@ public class PersonController {
 	public String listPersons(Model model) {
 		model.addAttribute("person", new Person());
 		model.addAttribute("listPersons", this.personService.listPersons());
-		return "person";
+		return "_person_view";
 	}
 	
+	@RequestMapping(value = "/allPersons", method = RequestMethod.GET,produces = "application/json")
+	public List<Person> listAllPersons(Model model) {
+		
+		return this.personService.listPersons();
+	}
 	//For add and update person both
-	@RequestMapping(value= "/person/add", method = RequestMethod.POST)
+	@RequestMapping(value= "/person/add", method = RequestMethod.GET)
 	public String addPerson(@ModelAttribute("person") Person p){
 		
-		if(p.getId() == 0){
-			//new person, add it
-			this.personService.addPerson(p);
-		}else{
-			//existing person, call update
-			this.personService.updatePerson(p);
-		}
-		
-		return "redirect:/persons";
-		
+//		if(p.getId() == 0){
+//			//new person, add it
+//			this.personService.addPerson(p);
+//		}else{
+//			//existing person, call update
+//			this.personService.updatePerson(p);
+//		}
+//		
+		//return "redirect:/persons";
+		return "_add_person_view";
 	}
 	
 	@RequestMapping("/remove/{id}")
