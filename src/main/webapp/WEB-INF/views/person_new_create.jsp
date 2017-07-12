@@ -8,9 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <title>Add New Contact</title>
-
-<link rel="stylesheet" href="../resources/css/page-theme.css">
-<link rel="stylesheet" href="../resources/css/navigation.css">
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet"
@@ -22,11 +19,7 @@
 </head>
 <body>
 
-	<ul class="topnav">
-		<li><a href="././home">Home</a></li>
-		<li><a href="../persons">All Contacts</a></li>
-		<li><a href="./signout">Sign Out</a></li>
-	</ul>
+	<%@include file="../views/common/header_bar.jsp"%>
 
 
 	<div class="main-content">
@@ -163,7 +156,11 @@
 	</div>
 
 
-
+	<div id="footer">
+		<br></br>
+		<footer> <%@include file="./common/footer/footer.html"%>
+		</footer>
+	</div>
 	<script
 		src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 

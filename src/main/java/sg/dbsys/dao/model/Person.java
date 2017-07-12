@@ -1,11 +1,14 @@
 package sg.dbsys.dao.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * Entity bean with JPA annotations Hibernate provides JPA implementation
@@ -55,9 +58,81 @@ public class Person {
 	private String country;
 
 	@Column(name = "mobileno", length = 20, nullable = true)
-	private String mobileNo;
+	private String mobileNo = "+00-0000000";
 
 	private String pEmailId;
+
+	private String title;
+
+	private String company;
+
+	private String city;
+
+	private String profile;
+
+	private String channel;
+
+	private String comment;
+
+	@Column(name = "last-update")
+	@Transient
+	private Date last_update;
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
+	public String getChannel() {
+		return channel;
+	}
+
+	public void setChannel(String channel) {
+		this.channel = channel;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public Date getLast_update() {
+		return last_update;
+	}
+
+	public void setLast_update(Date last_update) {
+		this.last_update = last_update;
+	}
 
 	public int getId() {
 		return id;
